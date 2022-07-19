@@ -1,0 +1,253 @@
+/* TO DO: change color hamburger on click */
+
+/* base */
+
+:root {
+    --background-color: #FBF8F1;
+    --accent-color: #54BAB9;
+    --text-color: #000;
+    --hover-accent-color: #298180;
+
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    min-height: 100%;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+}
+
+a {
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+a:hover {
+    color: var(--hover-accent-color);
+    letter-spacing: 2px;
+}
+
+p {
+    margin: 1rem 0;
+
+}
+
+/* layout */
+main {
+    margin: 5rem 1rem;
+}
+
+ul {
+    list-style-position: inside;
+}
+
+main p:first-of-type {
+    margin-top: 2rem;
+}
+
+.jelmer-profiel-circle {
+    width: 100%;
+    margin: 3rem 0 0;
+}
+
+main ul {
+    margin: 2rem 0;
+}
+
+h1 {
+    margin: 3rem 0;
+}
+
+h2,
+h3,
+p {
+    margin: 1rem 0;
+}
+
+hr {
+    border: 1px dotted var(--accent-color)
+}
+
+/* media queries main desktop */
+@media screen and (min-width: 500px) {
+    main {
+        width: 500px;
+        margin: 0 auto;
+    }
+}
+
+/* volg-mij section */
+#volg-mij {
+    text-decoration: underline;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+#volg-mij * {
+    margin: 1.5rem auto;
+}
+
+.social-links a {
+    margin-top: 1.5rem;
+    padding: 0 1rem;
+}
+
+.btn {
+    background: #54BAB9;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 8px;
+    padding: 0.5rem 2rem;
+    border: solid var(--text-color) 1px;
+}
+
+.btn:hover,
+.btn:active {
+    background: var(--hover-accent-color);
+    color: var(--text-color);
+}
+
+/* modules */
+/* navigation and hamburger styles, fixed in screen */
+#nav-menu {
+    position: fixed;
+    top: -100%;
+    background-color: var(--accent-color);
+    width: 100%;
+    opacity: 0.95;
+    z-index: 5;
+    transition: all 0.5s ease-out;
+}
+
+#nav-menu li {
+    text-align: center;
+    margin: 2rem;
+    list-style-type: none;
+    font-size: 2rem;
+}
+
+#nav-menu a {
+    color: var(--text-color);
+}
+
+.hamburger {
+    position: fixed;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    z-index: 10;
+    right: 2rem;
+    top: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger .bar {
+    display: block;
+    background-color: var(--text-color);
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.5s ease-out;
+}
+
+/* hamburger on close styling */
+.hamburger.close {
+    transform: rotate(180deg);
+}
+
+.hamburger.close .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.close .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.close .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* media querie for desktop */
+@media screen and (min-width: 500px) {
+    .button-wrapper {
+        display: none;
+    }
+
+    #nav-menu {
+        position: relative;
+        display: flex;
+        top: 0;
+        background-color: transparent;
+        /* margin: 2rem auto 4rem; */
+        transition: none;
+        justify-content: space-between;
+        width: 80%;
+        max-width: 750px;
+        margin: 4rem auto;
+    }
+
+    #nav-menu li {
+        display: inline;
+        font-size: 1rem;
+        margin: 0;
+    }
+}
+
+/* artikel div */
+.artikel-item {
+    margin: 8rem 0 2rem;
+}
+
+.artikel-item .desktop {
+    display: none;
+}
+
+.artikel-item a span:hover {
+    background-color: var(--accent-color);
+    opacity: 0.5;
+}
+
+.artikel-item img {
+    display: block;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+}
+
+.artikel-item:nth-child(even) .text-wrapper {
+    margin-left: 1rem;
+}
+
+@media screen and (min-width: 500px) {
+    .artikel-item {
+        display: flex;
+        flex-direction: row;
+        margin: 6rem 0 2rem;
+    }
+
+    .artikel-item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .artikel-item .desktop {
+        display: block;
+    }
+
+    .artikel-item .mobile {
+        display: none;
+    }
+
+    .artikel-item img {
+        width: 240px;
+        height: 240px;
+        object-fit: cover;
+    }
+}
