@@ -138,6 +138,11 @@ hr {
     color: var(--text-color);
 }
 
+#nav-menu li a .active-page {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .hamburger {
     position: fixed;
     cursor: pointer;
@@ -229,12 +234,28 @@ hr {
 @media screen and (min-width: 500px) {
     .artikel-item {
         display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
         margin: 6rem 0 2rem;
     }
 
-    .artikel-item:nth-child(even) {
-        flex-direction: row-reverse;
+    .artikel-item:nth-child(3n+1) {
+        flex-direction: row;
+    }
+
+    .artikel-item:nth-child(3n+1) .text-wrapper {
+        margin-left: 20px;
+    }
+
+    .artikel-item:nth-child(3n+3) .text-wrapper {
+        padding-right: 20px;
+    }
+
+    .text-wrapper h2 {
+        margin-top: 0;
+    }
+
+    .text-wrapper h3 {
+        font-style: italic;
     }
 
     .artikel-item .desktop {
